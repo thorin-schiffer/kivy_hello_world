@@ -89,8 +89,35 @@
                 on_press: logo.pos_hint = {'center_x': .6, 'center_y': .3}
         NextButton
 
+<GridLayoutScreen@Screen>:
+    name: 'grid'
+    BoxLayout:
+        orientation: 'vertical'
+        GridLayout:
+            cols: 3
+            rows: 3
+            id: layout
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+
+        BoxLayout
+            Button:
+                text: '4x2'
+                on_press: layout.cols = 4; layout.rows = 2
+            Button:
+                text: '3x3'
+                on_press: layout.cols = 3; layout.rows = 3
+        NextButton
+
 <HelloWidget>:
-    Hello:
-    AnchorLayoutScreen
-    BoxLayoutScreen
-    FloatLayoutScreen
+#    Hello
+#    AnchorLayoutScreen
+#    BoxLayoutScreen
+#    FloatLayoutScreen
+    GridLayoutScreen

@@ -1,8 +1,8 @@
 from kivy.app import App
-from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.screenmanager import ScreenManager
 
 
-class HelloWidget(AnchorLayout):
+class HelloWidget(ScreenManager):
     pass
 
 

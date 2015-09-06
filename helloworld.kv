@@ -1,4 +1,50 @@
+<Image>:
+    source: "logo.png"
+    size_hint: .3, .3
+
+<Hello@Screen>:
+    name: 'hello'
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: "Hey kivy ;)"
+        Button:
+            text: "next"
+            on_press: root.manager.current = root.manager.next()
+
+<AnchorLayoutScreen@Screen>:
+    name: 'anchor'
+    BoxLayout:
+        orientation: 'vertical'
+        AnchorLayout:
+            id: layout
+            Image:
+                text: "Label"
+        GridLayout:
+            padding: dp(10)
+            spacing: dp(5)
+            rows: 3
+            cols: 3
+            Button:
+                text: 'left'
+                on_press: layout.anchor_x = self.text
+            Button:
+                text: 'center'
+                on_press: layout.anchor_x = self.text
+            Button:
+                text: 'right'
+                on_press: layout.anchor_x = self.text
+            Button:
+                text: 'top'
+                on_press: layout.anchor_y = self.text
+            Button:
+                text: 'center'
+                on_press: layout.anchor_y = self.text
+            Button:
+                text: 'bottom'
+                on_press: layout.anchor_y = self.text
 
 <HelloWidget>:
-    Label:
-        text: "Hey kivy ;)"
+    Hello:
+        default: True
+    AnchorLayoutScreen

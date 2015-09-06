@@ -116,7 +116,7 @@
         NextButton
 
 <StackLayoutScreen@Screen>:
-    name: 'grid'
+    name: 'stack'
     BoxLayout:
         orientation: 'vertical'
         StackLayout:
@@ -140,10 +140,28 @@
 
         NextButton
 
+<PageLayoutScreen@Screen>:
+    name: 'page'
+    BoxLayout:
+        orientation: 'vertical'
+        PageLayout:
+            id: layout
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+
+        NextButton
+
 <HelloWidget>:
-#    Hello
-#    AnchorLayoutScreen
-#    BoxLayoutScreen
-#    FloatLayoutScreen
-#    GridLayoutScreen
-#    StackLayoutScreen
+    Hello
+    AnchorLayoutScreen
+    BoxLayoutScreen
+    FloatLayoutScreen
+    GridLayoutScreen
+    StackLayoutScreen
+    PageLayoutScreen

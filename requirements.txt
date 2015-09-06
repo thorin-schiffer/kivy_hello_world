@@ -1,0 +1,4 @@
+Cython==0.21.2
+kivy
+buildozer
+Pillow

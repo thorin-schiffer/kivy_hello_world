@@ -115,9 +115,35 @@
                 on_press: layout.cols = 3; layout.rows = 3
         NextButton
 
+<StackLayoutScreen@Screen>:
+    name: 'grid'
+    BoxLayout:
+        orientation: 'vertical'
+        StackLayout:
+            id: layout
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+            Logo
+
+        BoxLayout
+            Button:
+                text: 'lr-tb'
+                on_press: layout.orientation = self.text
+            Button:
+                text: 'rl-tb'
+                on_press: layout.orientation = self.text
+
+        NextButton
+
 <HelloWidget>:
 #    Hello
 #    AnchorLayoutScreen
 #    BoxLayoutScreen
 #    FloatLayoutScreen
-    GridLayoutScreen
+#    GridLayoutScreen
+#    StackLayoutScreen

@@ -53,6 +53,7 @@
 
 
 <BoxLayoutScreen@Screen>:
+    name: 'box'
     BoxLayout:
         orientation: 'vertical'
         BoxLayout:
@@ -70,8 +71,26 @@
                 on_press: layout.orientation = self.text
         NextButton
 
+<FloatLayoutScreen@Screen>:
+    name: 'float'
+    BoxLayout:
+        orientation: 'vertical'
+        FloatLayout:
+            id: layout
+            Logo
+                id: logo
+                pos_hint: {'center_x': .3, 'center_y': .3}
+        BoxLayout
+            Button:
+                text: 'x 0.3'
+                on_press: logo.pos_hint = {'center_x': .3, 'center_y': .3}
+            Button:
+                text: 'x 0.6'
+                on_press: logo.pos_hint = {'center_x': .6, 'center_y': .3}
+        NextButton
+
 <HelloWidget>:
     Hello:
-        default: True
     AnchorLayoutScreen
     BoxLayoutScreen
+    FloatLayoutScreen

@@ -1,4 +1,11 @@
-<Image>:
+#:import App kivy.app.App
+
+<NextButton@Button>:
+    text: "next"
+    on_press: App.get_running_app().root.current = App.get_running_app().root.next()
+
+
+<Logo@Image>:
     source: "logo.png"
     size_hint: .3, .3
 
@@ -7,10 +14,9 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
+            color: 0, 0, 0, 1
             text: "Hey kivy ;)"
-        Button:
-            text: "next"
-            on_press: root.manager.current = root.manager.next()
+        NextButton
 
 <AnchorLayoutScreen@Screen>:
     name: 'anchor'
@@ -18,7 +24,7 @@
         orientation: 'vertical'
         AnchorLayout:
             id: layout
-            Image:
+            Logo:
                 text: "Label"
         GridLayout:
             padding: dp(10)
@@ -43,8 +49,29 @@
             Button:
                 text: 'bottom'
                 on_press: layout.anchor_y = self.text
+        NextButton
+
+
+<BoxLayoutScreen@Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            id: layout
+            Logo
+            Logo
+            Logo
+            Logo
+        BoxLayout
+            Button:
+                text: 'horizontal'
+                on_press: layout.orientation = self.text
+            Button:
+                text: 'vertical'
+                on_press: layout.orientation = self.text
+        NextButton
 
 <HelloWidget>:
     Hello:
         default: True
     AnchorLayoutScreen
+    BoxLayoutScreen

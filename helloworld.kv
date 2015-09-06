@@ -1,8 +1,14 @@
 #:import App kivy.app.App
-
-<NextButton@Button>:
-    text: "next"
-    on_press: App.get_running_app().root.current = App.get_running_app().root.next()
+<Navigation@BoxLayout>:
+    size_hint_y: .2
+    padding: dp(10)
+    spacing: dp(5)
+    Button:
+        text: "previous"
+        on_press: App.get_running_app().root.current = App.get_running_app().root.previous()
+    Button:
+        text: "next"
+        on_press: App.get_running_app().root.current = App.get_running_app().root.next()
 
 
 <Logo@Image>:
@@ -16,7 +22,7 @@
         Label:
             color: 0, 0, 0, 1
             text: "Hey kivy ;)"
-        NextButton
+        Navigation
 
 <AnchorLayoutScreen@Screen>:
     name: 'anchor'
@@ -27,6 +33,7 @@
             Logo:
                 text: "Label"
         GridLayout:
+            size_hint_y: .2
             padding: dp(10)
             spacing: dp(5)
             rows: 3
@@ -49,7 +56,7 @@
             Button:
                 text: 'bottom'
                 on_press: layout.anchor_y = self.text
-        NextButton
+        Navigation
 
 
 <BoxLayoutScreen@Screen>:
@@ -63,13 +70,17 @@
             Logo
             Logo
         BoxLayout
+            size_hint_y: .2
+            padding: dp(10)
+            spacing: dp(5)
+
             Button:
                 text: 'horizontal'
                 on_press: layout.orientation = self.text
             Button:
                 text: 'vertical'
                 on_press: layout.orientation = self.text
-        NextButton
+        Navigation
 
 <FloatLayoutScreen@Screen>:
     name: 'float'
@@ -81,13 +92,17 @@
                 id: logo
                 pos_hint: {'center_x': .3, 'center_y': .3}
         BoxLayout
+            size_hint_y: .2
+            padding: dp(10)
+            spacing: dp(5)
+
             Button:
                 text: 'x 0.3'
                 on_press: logo.pos_hint = {'center_x': .3, 'center_y': .3}
             Button:
                 text: 'x 0.6'
                 on_press: logo.pos_hint = {'center_x': .6, 'center_y': .3}
-        NextButton
+        Navigation
 
 <GridLayoutScreen@Screen>:
     name: 'grid'
@@ -107,13 +122,17 @@
             Logo
 
         BoxLayout
+            size_hint_y: .2
+            padding: dp(10)
+            spacing: dp(5)
+
             Button:
                 text: '4x2'
                 on_press: layout.cols = 4; layout.rows = 2
             Button:
                 text: '3x3'
                 on_press: layout.cols = 3; layout.rows = 3
-        NextButton
+        Navigation
 
 <StackLayoutScreen@Screen>:
     name: 'stack'
@@ -131,6 +150,10 @@
             Logo
 
         BoxLayout
+            size_hint_y: .2
+            padding: dp(10)
+            spacing: dp(5)
+
             Button:
                 text: 'lr-tb'
                 on_press: layout.orientation = self.text
@@ -138,7 +161,7 @@
                 text: 'rl-tb'
                 on_press: layout.orientation = self.text
 
-        NextButton
+        Navigation
 
 <PageLayoutScreen@Screen>:
     name: 'page'
@@ -155,7 +178,7 @@
             Logo
             Logo
 
-        NextButton
+        Navigation
 
 <HelloWidget>:
     Hello

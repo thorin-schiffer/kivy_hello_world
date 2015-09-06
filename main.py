@@ -11,5 +11,10 @@ class HelloWorldApp(App):
         return HelloWidget()
 
 
+from kivy.core.window import Window
+Window.clearcolor = (1, 1, 1, 1)
+
+
+
 app = HelloWorldApp()
 app.run()

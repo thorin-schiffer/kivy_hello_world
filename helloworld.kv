@@ -1,5 +1,8 @@
 #:import App kivy.app.App
 #:import get_color_from_hex kivy.utils.get_color_from_hex
+<Label>:
+    color: get_color_from_hex("666666ff")
+
 <-Button>:
     state_image: ''
     disabled_image: ''
@@ -51,7 +54,6 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
-            color: 0, 0, 0, 1
             text: "Hi kivy!"
             font_size: sp(100)
         Navigation
@@ -60,6 +62,10 @@
     name: 'anchor'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Anchor layout"
+            size_hint_y: .1
+            font_size: sp(18)
         AnchorLayout:
             id: layout
             Logo:
@@ -95,6 +101,11 @@
     name: 'box'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Box layout"
+            size_hint_y: .1
+            font_size: sp(18)
+
         BoxLayout:
             id: layout
             Logo
@@ -118,6 +129,11 @@
     name: 'float'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Float layout"
+            size_hint_y: .1
+            font_size: sp(18)
+
         FloatLayout:
             id: layout
             Logo
@@ -140,6 +156,11 @@
     name: 'grid'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Grid layout"
+            size_hint_y: .1
+            font_size: sp(18)
+
         GridLayout:
             cols: 3
             rows: 3
@@ -170,6 +191,11 @@
     name: 'stack'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Stack layout"
+            size_hint_y: .1
+            font_size: sp(18)
+
         StackLayout:
             id: layout
             Logo
@@ -199,6 +225,11 @@
     name: 'page'
     BoxLayout:
         orientation: 'vertical'
+        Label:
+            text: "Page layout"
+            size_hint_y: .1
+            font_size: sp(18)
+
         PageLayout:
             id: layout
             Logo
